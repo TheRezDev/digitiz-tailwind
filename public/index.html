@@ -45,55 +45,66 @@
             <span class="text-sm font-medium text-slate-800 mr-2 w-1/2"> فیلتر : اپل</span>
         </div>
     </div>
-    <!-- product section  -->
-    <div 
-    x-data = "{
-        products : [
-        {id:1, title:'ساعت هوشمند اپل سری 4', price:' ١٢,٣٤,٦٧٨ تومان'},
-        {id:2, title:'ساعت هوشمند اپل سری 7', price:' ١٢,٣٤٥,٧٨ تومان'},
-        {id:3, title:'ساعت هوشمند اپل سری 8', price:' ١٢,٣٤٥,٦٧٨ تومان'},
-        {id:4, title:'ساعت هوشمند اپل سری 6', price:' ١٢,٤٥٤,٦٧٨ تومان'},
-        {id:5, title:'ساعت هوشمند اپل سری 4', price:' ١٢,٣٤٥,٦٧٨ تومان'},
-        {id:6, title:'ساعت هوشمند اپل سری 7', price:' ١٢,٣٤٥,٦٧٨ تومان'},
-        ]
-    }"
-    class="grid gap-x-2 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 sm:gap-x-4 md:gap-x-8 md:gap-y-10 ">
-    <!-- single product -->
-    <template x-for="product in products" :key="product.id">
-    
-    <div class="bg-white rounded-xl p-2 shodow-md">
-        <div class="mb-5 bg-gray-100 rounded-xl p-2">
-            <img src="/assets/images/apple-watch-7.png" alt="apple-watch-7">
-        </div>
-        <!-- product description  -->
-        <div class="flex items-center justify-between w-full mb-3">
-            <span class="text-slate-200 text-sm md:text-base">اپل</span>
-            <div x-data="{color: 'red'}" class="flex items-center">
-                <div @click="color = 'red'" :class="color ==='red' ? 'ring-2 ring-red-400' : '' " class=" w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full cursor-pointer bg-red-400 border-2 border-white">
-                    <svg x-show="color==='red'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5  stroke-white">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
+    <!-- content -->
+    <div class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-8"> 
+        <!-- sidebar -->
+        <div class="bg-yellow-500 hidden md:block p-4 col-span-4 lg:col-span-3 row-span-2">sidebar</div>
+        <!-- sort section -->
+        <div class="bg-yellow-500 hidden md:block p-4 col-span-8 lg:col-span-9">sort section</div>
+        <!-- product section -->
+        <div class=" col-span-12 md:col-span-8 lg:col-span-9">
+            <div 
+                x-data = "{
+                    products : [
+                    {id:1, title:'ساعت هوشمند اپل سری 4', price:' ١٢,٣٤,٦٧٨ تومان'},
+                    {id:2, title:'ساعت هوشمند اپل سری 7', price:' ١٢,٣٤٥,٧٨ تومان'},
+                    {id:3, title:'ساعت هوشمند اپل سری 8', price:' ١٢,٣٤٥,٦٧٨ تومان'},
+                    {id:4, title:'ساعت هوشمند اپل سری 6', price:' ١٢,٤٥٤,٦٧٨ تومان'},
+                    {id:5, title:'ساعت هوشمند اپل سری 4', price:' ١٢,٣٤٥,٦٧٨ تومان'},
+                    {id:6, title:'ساعت هوشمند اپل سری 7', price:' ١٢,٣٤٥,٦٧٨ تومان'},
+                    ]
+                }"
+                class="grid gap-x-2 gap-y-8 grid-cols-2 lg:grid-cols-4 px-2 md:p-0 sm:gap-x-4 md:gap-x-6 md:gap-y-10 "
+            > 
+                <!-- single product -->
+                <template x-for="product in products" :key="product.id">
+                <div class="bg-white rounded-xl p-2 shodow-md">
+                    <div class="mb-5 bg-gray-100 rounded-xl p-2">
+                        <img src="/assets/images/apple-watch-7.png" alt="apple-watch-7">
+                    </div>
+                    <!-- product description  -->
+                    <div class="flex items-center justify-between w-full mb-3">
+                        <span class="text-slate-200 text-sm md:text-base">اپل</span>
+                        <div x-data="{color: 'red'}" class="flex items-center">
+                            <div @click="color = 'red'" :class="color ==='red' ? 'ring-2 ring-red-400' : '' " class=" w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full cursor-pointer bg-red-400 border-2 border-white">
+                                <svg x-show="color==='red'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5  stroke-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                            <div @click="color = 'blue'" :class="color ==='blue' ? 'ring-2 ring-blue-400' : '' "  class="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full cursor-pointer bg-blue-400 border-2 border-white -mr-1.5">
+                                <svg x-show="color==='blue'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                            <div @click="color = 'green'" :class="color ==='green' ? 'ring-2 ring-green-400' : '' " class="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full cursor-pointer bg-green-400 border-2 border-white -mr-1.5">
+                                <svg x-show="color==='green'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product title -->
+                    <div x-text="product.title" class="text-slate-800 text-xs font-bold mb-2 sm:text-base"> </div>
+                    <div x-text="product.price" class="text-orange-600 font-medium text-center sm:text-base text-sm mb-3"></div>
+                    <hr class="">
+                    <button class="w-full  font-bold text-red-600 py-1 md:text-lg">مشاهده و سفارش </button>
                 </div>
-                <div @click="color = 'blue'" :class="color ==='blue' ? 'ring-2 ring-blue-400' : '' "  class="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full cursor-pointer bg-blue-400 border-2 border-white -mr-1.5">
-                    <svg x-show="color==='blue'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                </div>
-                <div @click="color = 'green'" :class="color ==='green' ? 'ring-2 ring-green-400' : '' " class="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full cursor-pointer bg-green-400 border-2 border-white -mr-1.5">
-                    <svg x-show="color==='green'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 stroke-white">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                </div>
+                </template>
             </div>
         </div>
-        <!-- product title -->
-        <div x-text="product.title" class="text-slate-800 text-xs font-bold mb-2 md:text-base"> </div>
-        <div x-text="product.price" class="text-orange-600 font-medium text-center text-sm mb-3"></div>
-        <hr class="">
-        <button class="w-full  font-bold text-red-600 py-1 md:text-lg">مشاهده و سفارش </button>
     </div>
-    </template>
-
+    <!-- product section  -->
+    
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
